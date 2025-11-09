@@ -25,6 +25,7 @@ LapTrack_2.0/
 ├─ app.py                # Arquivo a ser executado para rodar a Dash
 ├─ README.md             # Descrição do projeto
 ├─ requirements.txt      # Bibliotecas e versões usadas
+├─ cache                 # Crie um cache para armazenar os dados do fastf1
 ├─ .gitignore            # Arquivos a serem ignorados pelo Git
 |
 ├─ modules/              # Módulos Python
