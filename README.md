@@ -1,6 +1,6 @@
 # LapTrack F1 - Dashboard de Telemetria
 
-![Banner](<img src="[assets/logos/logo.png](https://docs.fastf1.dev/_static/logo.png)" alt="Logo" width="200"/>)
+<img src="https://docs.fastf1.dev/_static/logo.png" alt="Logo" width="200"/> <img src ="https://www.pngmart.com/files/10/Formula-1-Logo-PNG-File.png" alt ="Logof1" width="200"/>
  <!-- opcional, caso queira colocar uma imagem de topo -->
 
 ## Descrição
@@ -19,4 +19,19 @@ O projeto é voltado para análise de desempenho de pilotos e equipes, fornecend
 - Layout responsivo e moderno
 
 ## Estrutura do Projeto
-
+`````
+LapTrack_2.0/
+|
+├─ app.py                # Arquivo a ser executado para rodar a Dash
+├─ README.md             # Descrição do projeto
+├─ requirements.txt      # Bibliotecas e versões usadas
+├─ .gitignore            # Arquivos a serem ignorados pelo Git
+|
+├─ modules/              # Módulos Python
+| ├─ init.py
+| ├─ callbacks.py        # Callbacks do Dash
+| ├─ layout.py           # Layout do Dash
+| ├─ tabela_pilotos.py   # Função para gerar a tabela de pilotos
+| ├─ track_map.py        # Função para gerar o mapa do circuito
+| └─ utils.py            # Cores das equipes
+`````
