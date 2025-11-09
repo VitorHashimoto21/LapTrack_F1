@@ -1,6 +1,7 @@
 # LapTrack F1 - Dashboard de Telemetria
 
-![Banner](https://docs.fastf1.dev/_static/logo.png))  <!-- opcional, caso queira colocar uma imagem de topo -->
+![Banner]<img src="[assets/logos/logo.png](https://docs.fastf1.dev/_static/logo.png)" alt="Logo" width="200"/> 
+ <!-- opcional, caso queira colocar uma imagem de topo -->
 
 ## Descrição
 
