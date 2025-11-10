@@ -1,11 +1,10 @@
 from dash import Dash
-
-from layout import criar_layout
-from callbacks import registrar_callbacks
+from modules.layout import criar_layout
+from modules.callbacks import registrar_callbacks
 from dash import dcc, html, Input, Output
-from track_map import gerar_mapa_comparativo
-from tabela_pilotos import gerar_tabela_pilotos_sessao
-
+from modules.track_map import gerar_mapa_comparativo
+from modules.tabela_pilotos import gerar_tabela_pilotos_sessao
+import modules.utils 
 
 
 import fastf1

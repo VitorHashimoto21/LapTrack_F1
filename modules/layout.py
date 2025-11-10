@@ -1,5 +1,6 @@
 from dash import dcc, html
-from tabela_pilotos import gerar_tabela_pilotos_sessao  # importa a função que você já tem
+from .git push
+tabela_pilotos import gerar_tabela_pilotos_sessao  # importa a função que você já tem
 
 def criar_layout():
     return html.Div(
