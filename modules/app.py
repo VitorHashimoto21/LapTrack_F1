@@ -1,5 +1,4 @@
 from dash import Dash
-
 from layout import criar_layout
 from callbacks import registrar_callbacks
 from dash import dcc, html, Input, Output

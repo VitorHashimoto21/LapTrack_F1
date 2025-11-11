@@ -1,5 +1,4 @@
 from dash import Input, Output, html
-from assets import utils
 import plotly.graph_objs as go
 import fastf1
 import pandas as pd
