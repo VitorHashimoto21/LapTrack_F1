@@ -2,9 +2,9 @@ from dash import Input, Output, html
 import plotly.graph_objs as go
 import fastf1
 import pandas as pd
-from utils import cores_equipes
-from track_map import gerar_mapa_comparativo
-from tabela_pilotos import gerar_tabela_pilotos_sessao
+from .utils import cores_equipes
+from .track_map import gerar_mapa_comparativo
+from .tabela_pilotos import gerar_tabela_pilotos_sessao
 
 
 def registrar_callbacks(app):

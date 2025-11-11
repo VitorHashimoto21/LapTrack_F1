@@ -8,7 +8,7 @@ import numpy as np
 import io
 import base64
 import pandas as pd
-from utils import cores_equipes
+from .utils import cores_equipes
 
 def gerar_mapa_comparativo(corrida, ano, piloto1, piloto2, sessao):
     try:
