@@ -9,7 +9,7 @@ from tabela_pilotos import gerar_tabela_pilotos_sessao
 
 def registrar_callbacks(app):
 
-    # Atualiza as corridas
+    # Atualiza as corridas 
     @app.callback(
         Output('corrida-dropdown', 'options'),
         Input('ano-dropdown', 'value')
