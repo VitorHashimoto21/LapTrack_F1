@@ -1,43 +1,46 @@
 from dash import dcc, html
-from .tabela_pilotos import gerar_tabela_pilotos_sessao  # importa a função que você já tem
+from .tabela_pilotos import gerar_tabela_pilotos_sessao
 
 def criar_layout():
     return html.Div(
-        style={'backgroundColor': '#000000', 'color': 'white', 'padding': '20px'},
+        style={'backgroundColor': '#000', 'color': 'white', 'padding': '20px'},
         children=[
-
-            # ======== LOGO E TÍTULO PRINCIPAL ========
+            # LOGO E TÍTULO
             html.Div([
                 html.Img(
                     src="https://upload.wikimedia.org/wikipedia/commons/3/33/F1.svg",
                     style={'height': '60px', 'display': 'block', 'margin': '0 auto'}
-                )
+                ),
+                html.H1("LAP TRACK", style={'textAlign': 'center'}),
+                html.Div([
+                    html.A("⬅ Voltar à Tela Principal", href="/", style={'display': 'block', 'margin': '20px auto', 'width': 'fit-content'})
+                ])
             ]),
-            html.H1("LAP TRACK", style={'textAlign': 'center'}),
 
-            # ======== DROPDOWNS DE FILTRO ========
+            # DROPDOWNS
             html.Div([
                 html.Div([
-                    html.Label("Ano:", style={'color': 'white'}),
+                    html.Label("Ano:", style={'color': 'white', 'fontWeight': 'bold'}),
                     dcc.Dropdown(
                         id='ano-dropdown',
                         options=[{'label': str(ano), 'value': ano} for ano in range(2021, 2025)],
                         value=2024,
-                        style={'backgroundColor': 'white', 'color': 'black'}
+                        style={'backgroundColor': '#111', 'color': 'white'}
                     )
                 ], style={'width': '32%', 'display': 'inline-block'}),
 
                 html.Div([
-                    html.Label("Corrida:", style={'color': 'white'}),
+                    html.Label("Corrida:", style={'color': 'white', 'fontWeight': 'bold'}),
                     dcc.Dropdown(
                         id='corrida-dropdown',
                         options=[],
-                        style={'backgroundColor': 'white', 'color': 'black'}
+                        placeholder="Selecione a corrida",
+                        style={'backgroundColor': '#111', 'color': 'white'}
                     )
                 ], style={'width': '32%', 'display': 'inline-block', 'paddingLeft': '2%'}),
 
                 html.Div([
-                    html.Label("Sessão:", style={'color': 'white'}),
+                    html.Label("Sessão:", style={'color': 'white', 'fontWeight': 'bold'}),
                     dcc.Dropdown(
                         id='sessao-dropdown',
                         options=[
@@ -50,23 +53,25 @@ def criar_layout():
                             {'label': 'Corrida', 'value': 'R'},
                         ],
                         value='R',
-                        style={'backgroundColor': 'white', 'color': 'black'}
+                        style={'backgroundColor': '#111', 'color': 'white'}
                     )
                 ], style={'width': '32%', 'display': 'inline-block', 'paddingLeft': '2%'}),
             ]),
 
             html.Br(),
 
-            # ======== SELEÇÃO DE PILOTOS ========
+            # PILOTOS
             html.Div([
                 html.Div([
-                    html.Label("Piloto 1:", style={'color': 'white'}),
-                    dcc.Dropdown(id='piloto1-dropdown', style={'backgroundColor': 'white', 'color': 'black'})
+                    html.Label("Piloto 1:", style={'color': 'white', 'fontWeight': 'bold'}),
+                    dcc.Dropdown(id='piloto1-dropdown', placeholder="Selecione o piloto 1",
+                                 style={'backgroundColor': '#111', 'color': 'white'})
                 ], style={'width': '49%', 'display': 'inline-block'}),
 
                 html.Div([
-                    html.Label("Piloto 2:", style={'color': 'white'}),
-                    dcc.Dropdown(id='piloto2-dropdown', style={'backgroundColor': 'white', 'color': 'black'})
+                    html.Label("Piloto 2:", style={'color': 'white', 'fontWeight': 'bold'}),
+                    dcc.Dropdown(id='piloto2-dropdown', placeholder="Selecione o piloto 2",
+                                 style={'backgroundColor': '#111', 'color': 'white'})
                 ], style={'width': '49%', 'display': 'inline-block', 'paddingLeft': '2%'}),
             ]),
 
@@ -75,7 +80,7 @@ def criar_layout():
 
             html.Br(),
 
-            # ======== MAPA + CLASSIFICAÇÃO (LADO A LADO) ========
+            # MAPA + TABELA
             html.Div(
                 style={
                     'backgroundColor': 'black',
@@ -87,7 +92,6 @@ def criar_layout():
                     'gap': '20px'
                 },
                 children=[
-                    # ---- Coluna do MAPA ----
                     html.Div(
                         style={
                             'flex': '1',
@@ -98,51 +102,18 @@ def criar_layout():
                             'textAlign': 'center',
                         },
                         children=[
-                            html.H2("Mapa do Circuito", style={
-                                'color': 'white',
-                                'textAlign': 'center',
-                                'marginBottom': '10px'
-                            }),
-                            html.Div(
-                                id='mapa-circuito',
-                                style={
-                                    'display': 'flex',
-                                    'justifyContent': 'center',
-                                    'alignItems': 'center',
-                                    'width': '200%'
-                                },
-                                children=[
-                                    html.P(
-                                        "O mapa do circuito será exibido aqui.",
-                                        style={'color': 'gray', 'textAlign': 'center'}
-                                    )
-                                ]
-                            )
+                            html.H2("Mapa do Circuito", style={'color': 'white','textAlign': 'center','marginBottom': '10px'}),
+                            html.Div(id='mapa-circuito', style={'display': 'flex','justifyContent': 'center','alignItems': 'center','width': '200%'},
+                                     children=[html.P("O mapa do circuito será exibido aqui.", style={'color': 'gray','textAlign': 'center'})])
                         ]
                     ),
 
-                    # ---- Coluna da CLASSIFICAÇÃO ----
                     html.Div(
-                        style={
-                            'flex': '1',
-                            'display': 'flex',
-                            'flexDirection': 'column',
-                            'alignItems': 'center',
-                            'justifyContent': 'flex-start',
-                            'textAlign': 'center'
-                        },
+                        style={'flex': '1','display': 'flex','flexDirection': 'column','alignItems': 'center','justifyContent': 'flex-start','textAlign': 'center'},
                         children=[
-                            html.H2("Classificação da Sessão", style={'color': 'white'}),
-
-                            # === Aqui a tabela é chamada diretamente ===
-                            html.Div(
-                                id='tabela-classificacao',
-                                style={'width': '100%'},
-                                children=[
-                                    gerar_tabela_pilotos_sessao(2024, 'Bahrain', 'R')
-                                    # você pode alterar os valores fixos acima ou ligá-los a callbacks
-                                ]
-                            )
+                            html.H2("Posições na Sessão", style={'color': 'white'}),
+                            html.Div(id='tabela-classificacao', style={'width': '100%'},
+                                     children=[gerar_tabela_pilotos_sessao(2024, 'Bahrain', 'R')])
                         ]
                     ),
                 ]

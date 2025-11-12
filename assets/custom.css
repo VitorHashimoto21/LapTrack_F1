@@ -1,0 +1,87 @@
+/* assets/custom.css */
+
+/* estilos principais para o menu do react-select / dash */
+.Select-menu-outer,
+.VirtualizedSelectMenu,
+.VirtualizedSelectOption,
+.VirtualizedSelectFocusedOption,
+.Select-option,
+.Select-control,
+.Select--single > .Select-control .Select-value,
+.Select--single .Select-placeholder,
+.Select-input > input,
+.Select-arrow-zone,
+.Select-value-label {
+    background-color: #111 !important;
+    color: #ffffff !important;
+    border: 1px solid #ff0000 !important;
+}
+
+/* foco/hover da opção */
+.Select-option.is-focused,
+.VirtualizedSelectFocusedOption,
+.Select-option:hover {
+    background-color: #ff0000 !important;
+    color: #ffffff !important;
+}
+
+/* garantir valor selecionado legível */
+.Select--single > .Select-control .Select-value,
+.Select-value-label {
+    color: #ffffff !important;
+}
+
+/* input de pesquisa */
+.Select-input > input {
+    color: #ffffff !important;
+}
+
+/* alguns seletores gerados por versões mais novas do react-select - abrangência */
+[class*="css-"] .css-1gtu0rj-Menu, /* fallback: menu classe gerada */
+[class*="css-"] .css-1okebmr-Menu,
+[class*="css-"] .css-1okebmr-MenuList,
+[class*="css-"] .css-1wy0on6 {
+    background-color: #111 !important;
+    color: #fff !important;
+}
+
+/* item em foco em react-select v2+ gerado */
+[class*="css-"] [data-focused="true"],
+[class*="css-"] .css-1n7v3ny-option--is-focused,
+[class*="css-"] .css-1n7v3ny-option {
+    background-color: #ff0000 !important;
+    color: #ffffff !important;
+}
+
+/* estilo da caixa do dropdown (visível antes de abrir) */
+.Select-control,
+.css-1okebmr-Control,
+.css-yk16xz-control {
+    background-color: #1a1a1a !important;
+    border: 1px solid #ff0000 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 8px rgba(255,0,0,0.25) !important;
+}
+
+/* placeholder */
+.Select-placeholder,
+.css-1wa3eu0-placeholder {
+    color: #bdbdbd !important;
+}
+
+/* botão voltar (estética) */
+a {
+    text-decoration: none !important;
+    background-color: red !important;
+    color: white !important;
+    padding: 1rem 2rem !important;
+    border-radius: 10px !important;
+    font-weight: bold !important;
+    transition: 0.3s !important;
+    box-shadow: 0 0 10px red !important;
+}
+a:hover {
+    background-color: darkred !important;
+    box-shadow: 0 0 20px crimson !important;
+    transform: scale(1.03);
+}
