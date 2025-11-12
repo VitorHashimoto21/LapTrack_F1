@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LapTrack F1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Poppins", sans-serif;
+            background: url("{{ url_for('static', filename='f1.jpg') }}") no-repeat center center/cover;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 15px red;
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        a {
+            text-decoration: none;
+            background-color: red;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 0 10px red;
+        }
+        a:hover {
+            background-color: darkred;
+            box-shadow: 0 0 20px crimson;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1>🏎️ Bem-vindo ao LapTrack F1</h1>
+    <p>Visualize e analise a telemetria das corridas de Fórmula 1 com estilo.</p>
+    <a href="/dash/">Entrar no Dashboard</a>
+</body>
+</html>
