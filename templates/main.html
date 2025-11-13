@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LapTrack F1</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='custom.css') }}">
     <style>
         body {
             margin: 0;
@@ -19,16 +20,48 @@
             align-items: center;
             text-align: center;
         }
+
+        /* Navbar */
+        nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+        }
+
+        nav a {
+            background: none !important;
+            box-shadow: none !important;
+            color: white !important;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff0000 !important;
+            transform: scale(1.1);
+        }
+
         h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
             text-shadow: 0 0 15px red;
+            margin-top: 60px; /* pequeno ajuste por causa da navbar */
         }
+
         p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
         }
-        a {
+
+        a.btn-principal {
             text-decoration: none;
             background-color: red;
             color: white;
@@ -38,7 +71,8 @@
             transition: 0.3s;
             box-shadow: 0 0 10px red;
         }
-        a:hover {
+
+        a.btn-principal:hover {
             background-color: darkred;
             box-shadow: 0 0 20px crimson;
             transform: scale(1.05);
@@ -46,8 +80,18 @@
     </style>
 </head>
 <body>
-    <h1> LapTrack F1</h1>
-    <p> Visualize e analise a telemetria das corridas de Fórmula 1.</p>
-    <a href="/dash/">Entrar no Dashboard</a>
+    <!-- NAVBAR -->
+  <body>
+    <nav>
+        <a href="/">Início</a>
+        <a href="/dash/">Dashboard</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/equipe">Equipe</a>
+    </nav>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <h1>Lap Track</h1>
+    <p>Visualize e analise a telemetria das corridas de Fórmula 1.</p>
+    <a href="/dash/" class="btn-principal">Entrar no Dashboard</a>
 </body>
 </html>

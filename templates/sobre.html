@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre o Projeto - LapTrack F1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .tech-card {
+            text-decoration: none;
+            color: white;
+            background-color: rgba(20, 20, 20, 0.8);
+            border: 1px solid red;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+
+        .tech-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px red;
+            background-color: rgba(50, 0, 0, 0.9);
+        }
+
+        .tech-card img {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: white;
+            font-family: "Poppins", sans-serif;
+        }
+
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 0 10px red;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: red;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: red;
+            text-shadow: 0 0 15px red;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        .section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 4rem 0;
+            gap: 2rem;
+        }
+
+        .section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .text {
+            flex: 1;
+        }
+
+        .image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .image img {
+            width: 80%;
+            max-width: 400px;
+            border-radius: 15px;
+            border: 2px solid red;
+            box-shadow: 0 0 20px rgba(255,0,0,0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(255,0,0,0.7);
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .tech-card {
+            background-color: #111;
+            border: 1px solid #ff0000;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .tech-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255,0,0,0.6);
+        }
+
+        .tech-card img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .tech-card h3 {
+            color: red;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            .section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .section:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .image img {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Início</a>
+        <a href="/dash/">Dashboard</a>
+        <a href="/sobre">Sobre</a>
+        <a href="/equipe">Equipe</a>
+    </nav>
+
+    <div class="container">
+        <h1>Sobre o Projeto</h1>
+
+        <div class="section">
+            <div class="text">
+                <h2>O que é o LapTrack F1?</h2>
+                <p>
+                    O <strong>LapTrack F1</strong> é uma plataforma de análise de dados de Fórmula 1, 
+                    desenvolvida para transformar dados de telemetria e voltas em <strong>insights visuais interativos</strong>.
+                    O projeto combina tecnologia, ciência de dados e automobilismo para explorar como a performance dos pilotos varia em cada corrida.
+                </p>
+            </div>
+            <div class="image">
+               <img src="{{ url_for('static', filename='laptrack.jpg') }}" alt="logo">
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="text">
+                <h2>Como funciona?</h2>
+                <p>
+                    A aplicação usa dados oficiais via <strong>FastF1</strong> para coletar tempos de volta, telemetria e estratégias.
+                    Com o <strong>Dash</strong>, os dados são exibidos em gráficos interativos, permitindo comparar desempenho,
+                    aceleração, velocidade e setores entre pilotos e equipes.
+                </p>
+            </div>
+            <div class="image">
+                <img src="{{ url_for('static', filename='grafico.jpg') }}" alt="grafico">
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="text">
+                <h2>Tecnologias Utilizadas</h2>
+                    <p>
+                        Cada ferramenta foi escolhida para garantir desempenho, integração e clareza na visualização dos dados.  
+                        Confira as principais tecnologias que fazem o LapTrack F1 acontecer:
+                    </p>
+
+            <div class="tech-grid">
+                <a href="https://dash.plotly.com/" target="_blank" class="tech-card">
+                    <img src="https://miro.medium.com/v2/resize:fit:1200/1*iiPsq48qb_aMMVgD0WNQDg.png" alt="Dash logo">
+                    <h3>Dash</h3>
+                    <p>Framework Python para dashboards dinâmicos e visualizações interativas.</p>
+                </a>
+
+                <a href="https://docs.fastf1.dev/" target="_blank" class="tech-card">
+                <img src="https://docs.fastf1.dev/_static/logo.png" alt="FastF1 logo">
+                <h3>FastF1</h3>
+                <p>Biblioteca que coleta e processa dados reais da Fórmula 1.</p>
+            </a>
+
+            <a href="https://www.python.org/" target="_blank" class="tech-card">
+                <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python logo">
+                <h3>Python</h3>
+                <p>Linguagem usada para análise, tratamento e manipulação de dados.</p>
+            </a>
+
+            <a href="https://flask.palletsprojects.com/" target="_blank" class="tech-card">
+                <img src="https://flask.palletsprojects.com/en/stable/_images/flask-name.svg" alt="Flask logo">
+                <h3>Flask</h3>
+                <p>Servidor web que integra o Dash e as páginas HTML do projeto.</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+        <footer>
+            <p>© 2025 LapTrack F1 — Desenvolvido com paixão por dados e velocidade 🏎️</p>
+        </footer>
+    </div>
+</body>
+</html>
