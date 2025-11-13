@@ -16,44 +16,50 @@
             height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: center; /* mantém o conteúdo centralizado */
             align-items: center;
             text-align: center;
         }
 
-        /* Navbar */
+        /* Corrige para navbar fixa no topo */
         nav {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            background-color: rgba(0, 0, 0, 0.75);
+            background-color: #000;
+            padding: 1rem 0;
             display: flex;
             justify-content: center;
-            gap: 30px;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+            align-items: center;
+            gap: 3rem;
+            box-shadow: 0 0 15px red;
+            border-bottom: 2px solid red;
+            position: fixed; /* fixo no topo */
+            top: 0;
+            left: 0;
+            z-index: 1000;
         }
 
         nav a {
-            background: none !important;
-            box-shadow: none !important;
-            color: white !important;
+            color: white;
             text-decoration: none;
             font-weight: 600;
+            font-size: 1.1rem;
             transition: 0.3s;
         }
 
         nav a:hover {
-            color: #ff0000 !important;
-            transform: scale(1.1);
+            color: red;
+            text-shadow: 0 0 10px red;
+        }
+
+        /* Adiciona espaço para compensar navbar fixa */
+        .content {
+            margin-top: 100px;
         }
 
         h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
             text-shadow: 0 0 15px red;
-            margin-top: 60px; /* pequeno ajuste por causa da navbar */
         }
 
         p {
@@ -61,7 +67,7 @@
             margin-bottom: 2rem;
         }
 
-        a.btn-principal {
+        a.btn {
             text-decoration: none;
             background-color: red;
             color: white;
@@ -72,7 +78,7 @@
             box-shadow: 0 0 10px red;
         }
 
-        a.btn-principal:hover {
+        a.btn:hover {
             background-color: darkred;
             box-shadow: 0 0 20px crimson;
             transform: scale(1.05);
@@ -81,17 +87,19 @@
 </head>
 <body>
     <!-- NAVBAR -->
-  <body>
     <nav>
-        <a href="/">Início</a>
-        <a href="/dash/">Dashboard</a>
-        <a href="/sobre">Sobre</a>
-        <a href="/equipe">Equipe</a>
+        <a href="/"> 🏁 Início</a>
+        <a href="/dash/"> 📊 Dashboard</a>
+        <a href="/sobre"> ℹ️ Sobre</a>
+        <a href="/equipe"> 👥 Equipe</a>
+        <a href="/contato"> 📧 Contato</a>
     </nav>
 
-    <!-- CONTEÚDO PRINCIPAL -->
-    <h1>Lap Track</h1>
-    <p>Visualize e analise a telemetria das corridas de Fórmula 1.</p>
-    <a href="/dash/" class="btn-principal">Entrar no Dashboard</a>
+    <!-- CONTEÚDO CENTRAL -->
+    <div class="content">
+        <h1>LAP TRACK</h1>
+        <p>Visualize e analise a telemetria das corridas de Fórmula 1.</p>
+        <a class="btn" href="/dash/">Entrar no Dashboard</a>
+    </div>
 </body>
 </html>

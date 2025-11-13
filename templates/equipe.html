@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipe - LapTrack F1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: white;
+            font-family: "Poppins", sans-serif;
+        }
+
+        /* 🔴 NAVBAR */
+        nav {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 0 10px red;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: red;
+        }
+
+        /* 🔴 CONTEÚDO PRINCIPAL */
+        .container {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: red;
+            text-shadow: 0 0 15px red;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .member-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin: 4rem 0;
+            gap: 2rem;
+        }
+
+        .member-section:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .member-photo {
+            flex: 1;
+            text-align: center;
+        }
+
+        .member-photo img {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 50%;
+            border: 3px solid red;
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+
+        .member-photo img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(255, 0, 0, 0.8);
+        }
+
+        .member-info {
+            flex: 2;
+        }
+
+        .member-info h2 {
+            color: red;
+            margin-bottom: 0.5rem;
+        }
+
+        .member-info h4 {
+            color: #bbb;
+            margin-bottom: 1rem;
+        }
+
+        .member-info p {
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        .github-link {
+            display: inline-block;
+            margin-top: 10px;
+            color: red;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .github-link:hover {
+            color: white;
+            text-shadow: 0 0 10px red;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid #333;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* 🔴 RESPONSIVIDADE */
+        @media (max-width: 900px) {
+            .member-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .member-section:nth-child(even) {
+                flex-direction: column;
+            }
+
+            .member-photo img {
+                width: 70%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">🏁 Início</a>
+        <a href="/dash/">📊 Dashboard</a>
+        <a href="/sobre">ℹ️ Sobre</a>
+        <a href="/equipe">👥 Equipe</a>
+        <a href="/contato">📧 Contato</a>
+    </nav>
+
+    <div class="container">
+        <h1>Equipe LAP TRACK</h1>
+
+        <!-- Integrante 1 -->
+        <div class="member-section">
+            <div class="member-photo">
+                <img src="/static/vitor.jpeg" alt="Vitor Hashimoto">
+            </div>
+            <div class="member-info">
+                <h2>Vitor Yoshikazu Bancho Hashimoto</h2>
+                <h4>Desenvolvedor e Analista de Dados</h4>
+                <p>
+                    Responsável pela integração entre o Dash e o FastF1, além da criação dos dashboards
+                    e visualizações interativas. Focado em telemetria, performance e ciência de dados aplicados ao automobilismo.
+                </p>
+                <a class="github-link" href="https://github.com/VitorHashimoto21" target="_blank">🔗 GitHub</a>
+            </div>
+        </div>
+
+        <!-- Integrante 2 -->
+        <div class="member-section">
+            <div class="member-photo">
+                <img src="/static/lucas.jpg" alt="Lucas Tavares Vieira">
+            </div>
+            <div class="member-info">
+                <h2>Lucas Tavares Vieira</h2>
+                <h4>Desenvolvedor</h4>
+                <p>
+                    Estudante de Engenharia da Computação, com experiência em programação, análise de dados e aprendizado de máquina. Proativo e analítico, 
+                    com foco em desenvolver soluções eficientes e inovadoras em projetos de tecnologia.
+                </p>
+                <a class="github-link" href="https://github.com/LucasVieira-eng" target="_blank">🔗 GitHub</a>
+            </div>
+        </div>
+
+        <!-- Integrante 3 -->
+        <div class="member-section">
+            <div class="member-photo">
+                <img src="/static/kaua.jpg" alt="Kauã">
+            </div>
+            <div class="member-info">
+                <h2>Kauã Luiz Ramos</h2>
+                <h4>Desenvolvedor</h4>
+                <p>
+                    Estudante de Engenharia da Computação, atuante em desenvolvimento de software e análise de dados, com foco em model training.
+                    Experiência em Python, SQL e C. Interessado em aplicar conceitos de ciência de dados e inteligência artificial 
+                    para otimização de sistemas e soluções tecnológicas inovadoras.
+                </p>
+                <a class="github-link" href="https://github.com/kaualuizramos" target="_blank">🔗 GitHub</a>
+            </div>
+        </div>
+
+        <!-- Integrante 4 -->
+        <div class="member-section">
+            <div class="member-photo">
+                <img src="/static/lucas.png" alt="Rafael Katahria">
+            </div>
+            <div class="member-info">
+                <h2>Rafael Souza Katahira</h2>
+                <h4>Desenvolvedor</h4>
+                <p>
+                    Responsável pela arquitetura backend e integração Flask/Dash, garantindo o desempenho e
+                    estabilidade das aplicações LapTrack F1. Trabalha com otimização e APIs.
+                </p>
+                <a class="github-link" href="#" target="_blank">🔗 GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 LapTrack F1 — Desenvolvido com paixão pelo automobilismo e tecnologia 🏎️
+    </footer>
+</body>
+</html>

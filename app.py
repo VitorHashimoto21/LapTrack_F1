@@ -15,6 +15,10 @@ def home():
 def sobre():
     return render_template('sobre.html')
 
+@server.route('/contato')
+def contato():
+    return render_template('contato.html')
+
 @server.route('/equipe')
 def equipe():
     return render_template('equipe.html')
