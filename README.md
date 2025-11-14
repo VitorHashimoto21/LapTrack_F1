@@ -35,4 +35,20 @@ LapTrack_2.0/
 | ├─ tabela_pilotos.py   # Função para gerar a tabela de pilotos
 | ├─ track_map.py        # Função para gerar o mapa do circuito
 | └─ utils.py            # Cores das equipes
+|
+├─Templates
+| ├─ contato.html
+| ├─ equipe.html
+| ├─ main.html
+| ├─ sobre.html
+| 
+├─ static
+| ├─ f1.jpg
+| ├─ grafico.jpg
+| ├─ laptrack.jpg
+| ├─ Outras imagens foram utilizadas para a página sobre;
+|
+├─ assets
+| ├─ custom.css
+|
 `````
