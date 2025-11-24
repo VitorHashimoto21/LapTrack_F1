@@ -36,19 +36,20 @@ LapTrack_2.0/
 | ├─ track_map.py        # Função para gerar o mapa do circuito
 | └─ utils.py            # Cores das equipes
 |
-├─Templates
-| ├─ contato.html
-| ├─ equipe.html
-| ├─ main.html
-| ├─ sobre.html
+├─Templates              # Templates das páginas HTML usando Flask
+| ├─ contato.html        # Página Contato 
+| ├─ equipe.html         # Página equipe
+| ├─ main.html           # Página main   
+| ├─ sobre.html          # Página sobre
 | 
-├─ static
+├─ static                # Pasta que contém as imagens do site
 | ├─ f1.jpg
 | ├─ grafico.jpg
 | ├─ laptrack.jpg
 | ├─ Outras imagens foram utilizadas para a página sobre;
 |
-├─ assets
+├─ assets                # Pasta que contém o CSS que é utilizado pela DASH
 | ├─ custom.css
 |
+
 `````
